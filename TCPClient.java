@@ -1,3 +1,9 @@
+/*
+ * TCP client: connects to a TCPServer and prints the line it sends back
+ * (the server's current date and time).
+ *
+ *   java TCPClient localhost 6868
+ */
 import java.net.*;
 import java.io.*;
 
@@ -5,7 +11,10 @@ public class TCPClient
 {
 	public static void main(String[] args)
 	{
-        if (args.length < 2) return;
+        if (args.length < 2) {
+            System.out.println("Usage: java TCPClient <host> <port>");
+            return;
+        }
  
         String hostname = args[0];
         int port = Integer.parseInt(args[1]);
